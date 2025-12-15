@@ -1,14 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
-  background-color: var(bg-main);
-  color: var(text-main);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
-  background-color: var(bg-secondary);
+  background-color: var(--bg-secondary);
 }
 
 .coin-card {
@@ -38,4 +37,3 @@ header {
   max-height: 400px;
   overflow-y: auto;
 }
-
