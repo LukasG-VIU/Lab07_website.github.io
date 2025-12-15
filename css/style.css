@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
+  background-color: var(bg-main);
+  color: var(text-main);
 }
 
 header {
-  background-color: var(--bg-secondary);
+  background-color: var(bg-secondary);
 }
 
 .coin-card {
