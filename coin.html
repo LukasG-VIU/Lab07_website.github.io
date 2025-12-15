@@ -5,19 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coin Details</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-main: #0f172a;
+      --bg-secondary: #1e293b;
+      --accent: #c9a24d;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+    }
+  </style>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-[var(--bg-main)] text-[var(--text-main)]">
 
-<header class="fixed top-0 w-full z-50 p-4">
-  <h1 class="text-xl font-bold text-center">Silver Coin Catalog</h1>
+<header class="fixed top-0 w-full z-50 p-4 bg-[var(--bg-secondary)]">
+  <h1 class="text-xl font-bold text-center text-[var(--text-main)]">Silver Coin Catalog</h1>
 </header>
 
 <main class="pt-24 px-6 max-w-6xl mx-auto">
 
   <!-- Brief Description -->
   <section class="mb-8">
-    <p class="text-[var(text-muted)]">A detailed look at this coin, including specifications and history.</p>
+    <p class="text-[var(--text-muted)]">A detailed look at this coin, including specifications and history.</p>
   </section>
 
   <!-- Image Carousel -->
@@ -29,7 +38,7 @@
   <!-- Specs + Description -->
   <section class="grid md:grid-cols-2 gap-8">
 
-    <div class="spec-sheet bg-[var(bg-secondary)] p-4 rounded-xl">
+    <div class="spec-sheet bg-[var(--bg-secondary)] p-4 rounded-xl text-[var(--text-main)]">
       <ul class="space-y-2">
         <li><strong>Year:</strong> 1921</li>
         <li><strong>Material:</strong> Silver</li>
@@ -39,7 +48,7 @@
       </ul>
     </div>
 
-    <div class="long-desc bg-[var(bg-secondary)] p-4 rounded-xl">
+    <div class="long-desc bg-[var(--bg-secondary)] p-4 rounded-xl text-[var(--text-main)]">
       <p>
         The 1921 Morgan Dollar was the final year of issue and represents an important transition in U.S. coinage history...
       </p>
@@ -49,7 +58,7 @@
 
 </main>
 
-<footer class="mt-20 p-6 text-center text-sm text-[var(text-muted)]">
+<footer class="mt-20 p-6 text-center text-sm text-[var(--text-muted)]">
   © 2025 Lukas – Coin Catalog Project
 </footer>
 
