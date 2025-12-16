@@ -160,12 +160,12 @@
       <p>The Australian sixpence was struck in silver and closely followed British coin designs. It was commonly used in daily trade and remained in circulation for decades until Australia's switch to decimal currency.</p>
     </button>
         
-    <button type="button" class="coin-card bg-[var(--bg-secondary)] p-4 rounded-xl text-left" data-alt="images/IMG_6428.jpeg">
-      <img src="images/IMG_6427.jpeg" alt="1937 Silver Coin" class="rounded-lg mb-3 w-full object-cover">
+    <article class="coin-card bg-[var(--bg-secondary)] p-4 rounded-xl text-left cursor-pointer" role="button" tabindex="0" data-alt="images/IMG_6428.jpeg">
+      <img src="images/IMG_6427.jpeg" alt="1919 Silver Coin" class="rounded-lg mb-3 w-full object-cover">
       <h2 class="font-semibold text-[var(--text-main)]">1919 25 Øre</h2>
       <p class="text-sm text-[var(--text-muted)]">Denmark</p>
       <p>This Danish 25 Øre coin was minted shortly after World War I during a period of economic adjustment. Smaller silver denominations like this were gradually phased out as silver became too valuable for everyday coinage.</p>
-    </button>
+    <article>
 
   </section>
 
@@ -198,22 +198,29 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.coin-card').forEach(card => {
-    const img = card.querySelector('img');
-    if (!img || !card.dataset.alt) return;
+document.querySelectorAll('.coin-card').forEach(card => {
+  const img = card.querySelector('img');
+  if (!img || !card.dataset.alt) return;
 
-    card.addEventListener('click', e => {
+  const toggle = () => {
+    const currentSrc = img.src;
+    img.src = card.dataset.alt;
+    card.dataset.alt = currentSrc;
+  };
+
+  card.addEventListener('click', toggle);
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      const currentSrc = img.getAttribute('src');
-      const altSrc = card.dataset.alt;
-      img.setAttribute('src', altSrc);
-      card.dataset.alt = currentSrc;
-    });
+      toggle();
+    }
   });
+});
 </script>
 
 </body>
 </html>
+
 
 
 
