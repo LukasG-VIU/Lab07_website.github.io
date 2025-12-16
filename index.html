@@ -36,25 +36,28 @@
     </p>
   </section>
 
-  <!-- Horizontal Scroll Section -->
-  <section class="scroll-x mb-16">
+  <!-- Grid Section (rows of two) -->
+  <section class="coins-grid mb-16 max-w-4xl mx-auto">
 
-    <a class="coin-card bg-[var(--bg-secondary)] p-4 rounded-xl">
-      <img src="images/image1.jpg" alt="1921 Silver Coin" class="rounded-lg mb-3">
+    <!-- Use a button for clickable card to avoid anchor navigation; data-alt holds the alternate image path -->
+    <button type="button" class="coin-card bg-[var(--bg-secondary)] p-4 rounded-xl text-left" data-alt="images/image3.jpg">
+      <img src="images/image1.jpg" alt="1921 Silver Coin" class="rounded-lg mb-3 w-full object-cover">
       <h2 class="font-semibold text-[var(--text-main)]">1921 Morgan Dollar</h2>
       <p class="text-sm text-[var(--text-muted)]">United States</p>
-    </a>
+    </button>
 
-    <a class="coin-card bg-[var(--bg-secondary)] p-4 rounded-xl">
-      <img src="images/image2.jpg" alt="1937 Silver Coin" class="rounded-lg mb-3">
+    <button type="button" class="coin-card bg-[var(--bg-secondary)] p-4 rounded-xl text-left" data-alt="images/image4.jpg">
+      <img src="images/image2.jpg" alt="1937 Silver Coin" class="rounded-lg mb-3 w-full object-cover">
       <h2 class="font-semibold text-[var(--text-main)]">1937 Crown</h2>
       <p class="text-sm text-[var(--text-muted)]">United Kingdom</p>
-    </a>
+    </button>
+
+    <!-- Add more cards as needed; follow the same pattern and set data-alt to the image you want to toggle to. -->
 
   </section>
 
   <!-- Info Blocks -->
-  <section class="space-y-20 text-[var(--text-main)]">
+  <section class="space-y-20 text-[var(--text-main)] max-w-4xl mx-auto">
 
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <p>Coin collecting is the hobby of acquiring and studying coins from different cultures and eras.</p>
@@ -76,7 +79,26 @@
   © 2025 Lukas – Coin Catalog Project
 </footer>
 
+
+<script>
+  document.querySelectorAll('.coin-card').forEach(card => {
+    const img = card.querySelector('img');
+
+    if (!img || !card.dataset.alt) return;
+
+    card.addEventListener('click', (e) => {
+     
+      e.preventDefault();
+
+     
+      const currentSrc = img.getAttribute('src');
+      const altSrc = card.dataset.alt;
+
+      img.setAttribute('src', altSrc);
+      card.dataset.alt = currentSrc;
+    });
+  });
+</script>
+
 </body>
 </html>
-
-
